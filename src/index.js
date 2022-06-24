@@ -1,9 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+
 import './index.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import configureProductsStore from './hooks-store/products-store';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
-registerServiceWorker();
+configureProductsStore();
+
+ReactDOM.render(
+  
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>,
+  document.getElementById('root')
+);
